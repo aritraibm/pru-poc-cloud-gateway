@@ -10,14 +10,14 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: USER-SERVICE
-        uri: lb://USER-SERVICE
+      - id: ASSOCIATE-SERVICE
+        uri: lb://ASSOCIATE-SERVICE
         predicates:
-        - Path=/pru-user/**
-      - id: DEPARTMENT-SERVICE
-        uri: lb://DEPARTMENT-SERVICE
+        - Path=/pru-associate/**
+      - id: SKILL-SERVICE
+        uri: lb://SKILL-SERVICE
         predicates:
-        - Path=/pru-dept/**
+        - Path=/pru-skill/**
 
 #eureka:
 #  client:
