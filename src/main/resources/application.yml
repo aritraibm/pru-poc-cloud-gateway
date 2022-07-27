@@ -18,6 +18,10 @@ spring:
         uri: lb://SKILL-SERVICE
         predicates:
         - Path=/pru-skill/**
+      - id: ONBOARDING-TASK
+        uri: lb://ONBOARDING-TASK
+        predicates:
+        - Path=/task/**
 
 #eureka:
 #  client:
