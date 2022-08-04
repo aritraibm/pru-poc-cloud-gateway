@@ -21,7 +21,15 @@ spring:
       - id: ONBOARDING-TASK
         uri: lb://ONBOARDING-TASK
         predicates:
-        - Path=/task/**
+        - Path=/task/** , /onboarding_checklist/** , /get-token
+      - id: FILEMANAGER
+        uri: lb://FILEMANAGER
+        predicates:
+        - Path=/delete/**,downloadFile/**,uploadFile/**
+      - id: TOKEN-SERVICE
+        uri: lb://TOKEN-SERVICE
+        predicates:
+        - Path=/auth/login/**,/users,/products,
 
 #eureka:
 #  client:
