@@ -22,8 +22,8 @@ spring:
         uri: lb://ONBOARDING-TASK
         predicates:
         - Path=/task/** , /onboarding_checklist/** , /get-token
-      - id: FILEMANAGER
-        uri: lb://FILEMANAGER
+      - id: FILEMANAGER-SERVICE
+        uri: lb://FILEMANAGER-SERVICE
         predicates:
         - Path=/delete/**,downloadFile/**,uploadFile/**
       - id: TOKEN-SERVICE
