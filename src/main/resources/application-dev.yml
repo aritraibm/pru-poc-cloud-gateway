@@ -7,6 +7,7 @@ spring:
   config:
         activate:
             on-profile: dev
+        import: optional:configserver:http://10.5.0.9:9296/
 #  main:
 #    web-application-type: reactive
 #    allow-bean-definition-overriding: true
@@ -34,6 +35,14 @@ spring:
         predicates:
         - Path=/auth/login/**,/users,/products,
 
+management:
+  endpoint:
+    restart:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 #eureka:
 #  instance:
 #    hostname: ${vcap.application.uris[0]:10.5.0.5}
