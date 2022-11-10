@@ -1,5 +1,6 @@
 #cmd : docker build -t cloud-gateway-service .
-FROM openjdk:8
+FROM eclipse-temurin:8-jdk-alpine
 EXPOSE 9191
-ADD target/cloud-gateway-service.jar cloud-gateway-service.jar
+VOLUME /tmp
+COPY target/*.jar cloud-gateway-service.jar
 ENTRYPOINT ["java","-jar","/cloud-gateway-service.jar"]
